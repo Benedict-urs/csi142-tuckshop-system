@@ -4,7 +4,7 @@
 - Baraka Mooketsi Nthcathe — 202500196
 - Benedict John — 202507570
 - Abel Khumo — 2025502526
-- Tlhompho Papas — 202203256
+- Tlhompho Papiso — 202203256
 - Thata Thebe — 202500220
 
 ## Project Title
