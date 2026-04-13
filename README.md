@@ -3,7 +3,7 @@
 ## Group Members
 - Baraka Mooketsi Nthcathe — 202500196
 - Benedict John — 202507570
-- Abel Khumo — 2025502526
+- Abel Khumo — 202502524
 - Tlhompho Papiso — 202203256
 - Thata Thebe — 202500220
 
