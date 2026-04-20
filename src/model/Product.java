@@ -21,6 +21,6 @@ public abstract class Product {
     public abstract String getCategory();
 
     public String toString() {
-        return name + " | " + getCategory() + " | TZS " + price + " | Qty: " + quantity;
+        return name + " | " + getCategory() + " | BWP " + price + " | Qty: " + quantity;
     }
 }

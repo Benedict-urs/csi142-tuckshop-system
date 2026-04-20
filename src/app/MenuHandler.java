@@ -24,12 +24,16 @@ public class MenuHandler {
     }
 
     private void loadSeedData() {
-        inventoryService.addProduct(new FoodItem("Bread", 1500, 20));
-        inventoryService.addProduct(new FoodItem("Biscuits", 500, 50));
+        inventoryService.addProduct(new FoodItem("Bread", 150, 20));
+        inventoryService.addProduct(new FoodItem("Biscuits", 50, 50));
         inventoryService.addProduct(new FoodItem("Mandazi", 200, 100));
-        inventoryService.addProduct(new DrinkItem("Coca Cola", 1000, 30));
-        inventoryService.addProduct(new DrinkItem("Water", 500, 100));
-        inventoryService.addProduct(new DrinkItem("Juice", 800, 40));
+        inventoryService.addProduct(new DrinkItem("Coca Cola", 13, 30));
+        inventoryService.addProduct(new DrinkItem("Water", 5, 100));
+        inventoryService.addProduct(new DrinkItem("Juice", 18, 40));
+        inventoryService.addProduct(new DrinkItem("G-Vitah", 3, 400));
+        inventoryService.addProduct(new DrinkItem("Energy drink", 13, 40));
+        inventoryService.addProduct(new FoodItem("Fat cake", 2, 500));
+        
     }
 
     public void start() {
@@ -69,7 +73,7 @@ public class MenuHandler {
     private void addProduct() {
         System.out.print("Enter product name: ");
         String name = scanner.nextLine().trim();
-        double price = InputValidator.getPositiveDouble(scanner, "Enter price (TZS): ");
+        double price = InputValidator.getPositiveDouble(scanner, "Enter price (BWP): ");
         int quantity = InputValidator.getPositiveInt(scanner, "Enter quantity: ");
         System.out.print("Is this Food or Drink? (f/d): ");
         String type = scanner.nextLine().trim().toLowerCase();
@@ -99,7 +103,7 @@ public class MenuHandler {
         Sale sale = new Sale();
         sale.addItem(new SaleItem(product, qty));
         salesService.recordSale(sale);
-        System.out.println("Sale recorded! Total: TZS " + sale.getTotal());
+        System.out.println("Sale recorded! Total: BWP " + sale.getTotal());
     }
 
     private void searchProduct() {

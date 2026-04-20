@@ -17,6 +17,6 @@ public class SaleItem {
     }
 
     public String toString() {
-        return product.getName() + " x" + quantitySold + " = TZS " + getSubtotal();
+        return product.getName() + " x" + quantitySold + " = BWP " + getSubtotal();
     }
 }

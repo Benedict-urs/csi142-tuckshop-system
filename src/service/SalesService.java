@@ -35,11 +35,11 @@ public class SalesService {
             for (SaleItem item : sale.getItems()) {
                 System.out.println("  " + item);
             }
-            System.out.println("  Sale Total: TZS " + sale.getTotal());
+            System.out.println("  Sale Total: BWP " + sale.getTotal());
             saleNumber++;
         }
         System.out.println("========================");
         System.out.println("Total Sales Made: " + getTotalSales());
-        System.out.println("GRAND TOTAL: TZS " + getGrandTotal());
+        System.out.println("GRAND TOTAL: BWP " + getGrandTotal());
     }
 }

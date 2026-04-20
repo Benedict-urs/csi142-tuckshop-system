@@ -28,7 +28,7 @@ public class Sale {
         for (SaleItem item : items) {
             result += "  " + item.toString() + "\n";
         }
-        result += "  Total: TZS " + getTotal();
+        result += "  Total: BWP " + getTotal();
         return result;
     }
 }
