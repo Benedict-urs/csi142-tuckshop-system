@@ -18,3 +18,19 @@ Our project is a console-based Tuckshop Management System inspired by the small 
 
 ## Repository URL
 https://github.com/Benedict-urs/csi142-tuckshop-system
+## How to Compile and Run
+
+1. Make sure Java JDK is installed
+2. Open Terminal or Command Prompt
+3. Navigate to the project folder
+4. Run: javac -d out src/model/*.java src/service/*.java src/app/*.java
+5. Run: java -cp out app.Main
+6. Follow the menu options in the console
+
+## Features
+- Add food and drink products to inventory
+- View all current stock
+- Record a sale and reduce stock automatically
+- Search for a product by name
+- Print full sales report with grand total
+- Invalid inputs handled cleanly without crashing
