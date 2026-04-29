@@ -18,5 +18,31 @@ public class SaleRecorder {
         this.scanner = scanner;
     }
 
+    public void recordSale() {
+        System.out.print("Enter product name to sell: ");
+        String name = scanner.nextLine().trim();
+        Product product = inventoryService.searchByName(name);
 
+        if (product == null) {
+            System.out.println("Product not found.");
+            return;
+
+}
+
+        int qty = InputValidator.getPositiveInt(scanner, "Enter quantity to sell: ");
+        if (qty > product.getQuantity()) {
+            System.out.println("Not enough stock. Available: " + product.getQuantity());
+            return;
+        }
+
+        // Reduce stock
+        product.setQuantity(product.getQuantity() - qty);
+
+        // Create sale record
+        Sale sale = new Sale();
+        sale.addItem(new SaleItem(product, qty));
+        salesService.recordSale(sale);
+
+        System.out.printf("Sale recorded! Total: BWP %.2f%n", sale.getTotal());
+    }
 }
