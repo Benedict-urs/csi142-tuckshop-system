@@ -24,16 +24,15 @@ public class MenuHandler {
     }
 
     private void loadSeedData() {
-        inventoryService.addProduct(new FoodItem("Bread", 150, 20));
-        inventoryService.addProduct(new FoodItem("Biscuits", 50, 50));
-        inventoryService.addProduct(new FoodItem("Mandazi", 200, 100));
-        inventoryService.addProduct(new DrinkItem("Coca Cola", 13, 30));
-        inventoryService.addProduct(new DrinkItem("Water", 5, 100));
-        inventoryService.addProduct(new DrinkItem("Juice", 18, 40));
-        inventoryService.addProduct(new DrinkItem("G-Vitah", 3, 400));
-        inventoryService.addProduct(new DrinkItem("Energy drink", 13, 40));
-        inventoryService.addProduct(new FoodItem("Fat cake", 2, 500));
-        
+        inventoryService.addProduct(new FoodItem("Bread", 12.50, 20));
+        inventoryService.addProduct(new FoodItem("Biscuits", 5.00, 50));
+        inventoryService.addProduct(new FoodItem("Mandazi", 2.00, 100));
+        inventoryService.addProduct(new DrinkItem("Coca Cola", 13.00, 30));
+        inventoryService.addProduct(new DrinkItem("Water", 5.00, 100));
+        inventoryService.addProduct(new DrinkItem("Juice", 18.00, 40));
+        inventoryService.addProduct(new DrinkItem("G-Vitah", 3.00, 400));
+        inventoryService.addProduct(new DrinkItem("Energy drink", 13.00, 40));
+        inventoryService.addProduct(new FoodItem("Fat cake", 2.00, 500));
     }
 
     public void start() {
@@ -56,18 +55,35 @@ public class MenuHandler {
             }
 
             switch (choice) {
-                case 1: addProduct(); break;
-                case 2: inventoryService.viewStock(); break;
-                case 3: recordSale(); break;
-                case 4: searchProduct(); break;
-                case 5: salesService.printReport(); break;
+                case 1: 
+                    addProduct(); 
+                    break;
+                case 2: 
+                    inventoryService.viewStock(); 
+                    break;
+                case 3: 
+                    recordSale(); 
+                    break;
+                case 4: 
+                    searchProduct(); 
+                    break;
+                case 5: 
+                    salesService.printReport(); 
+                    break;
                 case 6:
                     System.out.println("Thank you for using Tuckshop System. Goodbye!");
                     break;
                 default:
                     System.out.println("Invalid choice. Please enter a number between 1 and 6.");
             }
+            
+            // Pause before showing menu again (except when exiting)
+            if (choice != 6) {
+                System.out.print("\nPress Enter to continue...");
+                scanner.nextLine();
+            }
         }
+        scanner.close();
     }
 
     private void addProduct() {
@@ -103,7 +119,7 @@ public class MenuHandler {
         Sale sale = new Sale();
         sale.addItem(new SaleItem(product, qty));
         salesService.recordSale(sale);
-        System.out.println("Sale recorded! Total: BWP " + sale.getTotal());
+        System.out.printf("Sale recorded! Total: BWP %.2f%n", sale.getTotal());
     }
 
     private void searchProduct() {
@@ -116,5 +132,4 @@ public class MenuHandler {
             System.out.println("Product not found.");
         }
     }
-}// Contributed by Baraka Mooketsi Nthcathe 
-// Contributor: Bareki Mooketsi Baraka Nthathe 
+}

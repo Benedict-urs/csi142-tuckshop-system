@@ -1,4 +1,5 @@
-package contracts; 
- 
-public interface Reportable { 
-    String generateReport(); 
+package contracts;
+
+public interface Reportable {
+    String generateReport();
+}
