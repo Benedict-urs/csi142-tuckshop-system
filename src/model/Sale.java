@@ -1,8 +1,9 @@
 package model;
 
 import java.util.ArrayList;
+import contracts.Reportable;
 
-public class Sale {
+public class Sale implements Reportable {
     private ArrayList<SaleItem> items;
 
     public Sale() {
@@ -30,5 +31,10 @@ public class Sale {
         }
         result += "  Total: BWP " + getTotal();
         return result;
+    }
+
+    @Override
+    public String generateReport() {
+        return "Sale: " + items.size() + " items | Total: BWP " + getTotal();
     }
 }
